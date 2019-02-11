@@ -1,0 +1,20 @@
+<odoo>
+
+    <data>
+
+        <!-- Top menu item -->
+
+        <menuitem name="Cinemateca" id="cinemateca.menu_root"/>
+
+        <!-- menu categories -->
+
+        <menuitem name="Menu" id="cinemateca.menu" parent="cinemateca.menu_root"/>
+
+        <!-- actions -->
+
+        <menuitem name="Director" id="flotas.menu_director" parent="cinemateca.menu" action="cinemateca.action_director"/>
+        <menuitem name="Pelicula" id="flotas.menu_pelicula" parent="cinemateca.menu" action="cinemateca.action_pelicula"/>
+
+    </data>
+
+</odoo>
