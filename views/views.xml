@@ -2,19 +2,44 @@
 
     <data>
 
+        <record model="ir.actions.act_window" id="action_director">
+            <field name="name">director</field>
+            <field name="res_model">modulocinebase.director</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model='ir.ui.view' id='director_form_view'>
+            <field name="name">director.form</field>
+            <field name="model">modulocinebase.director</field>
+            <field name="arch" type="xml">
+                <form string="Director Form">
+                    <field name="nameDirector"/>
+                </form>
+            </field>
+        </record>
+
+        <record model='ir.ui.view' id='director_tree_view'>
+            <field name="name">director.tree</field>
+            <field name="model">modulocinebase.director</field>
+            <field name="arch" type="xml">
+                <tree string="Director Tree">
+                    <field name="nameDirector"/>
+                </tree>
+            </field>
+        </record>
+
+
         <!-- Top menu item -->
 
-        <menuitem name="Cinemateca" id="cinemateca.menu_root"/>
+        <menuitem name="Cinemateca" id="menu_root"/>
 
         <!-- menu categories -->
 
-        <menuitem name="Menu" id="cinemateca.menu" parent="cinemateca.menu_root"/>
+        <menuitem name="Menu" id="menu" parent="menu_root"/>
 
         <!-- actions -->
 
-        <menuitem name="Director" id="flotas.menu_director" parent="cinemateca.menu" action="cinemateca.action_director"/>
-        <menuitem name="Pelicula" id="flotas.menu_pelicula" parent="cinemateca.menu" action="cinemateca.action_pelicula"/>
-
+        <menuitem name="director" id="menu_director" parent="menu" action="action_director"/>
     </data>
 
 </odoo>

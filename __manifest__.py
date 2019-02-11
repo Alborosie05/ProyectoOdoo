@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "ModuloCineBase",
+    'name': "modulocinebase",
 
     'summary': """
         modulo base""",
@@ -13,6 +13,7 @@
     'website': "https://zaragoza.salesianos.edu/",
     'category': 'trabajo',
     'version': '1.0',
+    'depends': ['base'],
     'data': [
         'views/views.xml',
     ],
