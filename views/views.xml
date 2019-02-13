@@ -81,7 +81,7 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <record model='ir.ui.view' id='film_form_view'>
+        <record model='ir.ui.view' id='category_form_view'>
             <field name="name">category.form</field>
             <field name="model">cinemateca.category</field>
             <field name="arch" type="xml">
@@ -94,7 +94,7 @@
             </field>
         </record>
 
-        <record model='ir.ui.view' id='film_tree_view'>
+        <record model='ir.ui.view' id='category_tree_view'>
             <field name="name">category.tree</field>
             <field name="model">cinemateca.category</field>
             <field name="arch" type="xml">
