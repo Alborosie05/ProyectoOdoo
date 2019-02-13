@@ -1,8 +1,6 @@
-from odoo import models,fields
+from odoo import models,fields, api
 
 class director(models.Model):
-    _inherit = 'base.entidad'
-    _name = 'modulocinebase.director'
-    nameDirector = fields.Char(string="name", required=True, help="Nombre del director")
-    filmid = fields.Many2one("modulocinebase.film", ondelete="set null", string="film", required=True, index=True)
-    
+    _name = 'cinemateca.director'
+    name = fields.Char(string="nombre de Director", required=True, help="Nombre del director")
+    film_ids = fields.One2many("cinemateca.film", "director_id", string="Peliculas")

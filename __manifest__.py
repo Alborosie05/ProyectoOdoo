@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "modulocinebase",
+    'name': "cinemateca",
 
     'summary': """
         modulo base""",

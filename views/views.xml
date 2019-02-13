@@ -2,28 +2,105 @@
 
     <data>
 
+        <!--DIRECTOR-->
+
         <record model="ir.actions.act_window" id="action_director">
             <field name="name">director</field>
-            <field name="res_model">modulocinebase.director</field>
+            <field name="res_model">cinemateca.director</field>
             <field name="view_mode">tree,form</field>
         </record>
 
         <record model='ir.ui.view' id='director_form_view'>
             <field name="name">director.form</field>
-            <field name="model">modulocinebase.director</field>
+            <field name="model">cinemateca.director</field>
             <field name="arch" type="xml">
                 <form string="Director Form">
-                    <field name="nameDirector"/>
+                    <group>
+                        <field name="name"/>
+                    </group>
                 </form>
             </field>
         </record>
 
         <record model='ir.ui.view' id='director_tree_view'>
             <field name="name">director.tree</field>
-            <field name="model">modulocinebase.director</field>
+            <field name="model">cinemateca.director</field>
             <field name="arch" type="xml">
                 <tree string="Director Tree">
-                    <field name="nameDirector"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--FILM-->
+
+        <record model="ir.actions.act_window" id="action_film">
+            <field name="name">film</field>
+            <field name="res_model">cinemateca.film</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Introduce una pelicula
+                </p>
+            </field>
+        </record>
+
+        <record model='ir.ui.view' id='film_form_view'>
+            <field name="name">film.form</field>
+            <field name="model">cinemateca.film</field>
+            <field name="arch" type="xml">
+                <form string="Film Form">
+                    <group>
+                        <field name="name"/>
+                        <field name="director_id"/>
+                        <field name="category_id"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model='ir.ui.view' id='film_tree_view'>
+            <field name="name">film.tree</field>
+            <field name="model">cinemateca.film</field>
+            <field name="arch" type="xml">
+                <tree string="Film Tree">
+                    <field name="name"/>
+                    <field name="director_id"/>
+                    <field name="category_id"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--CATEGORY-->
+
+        <record model="ir.actions.act_window" id="action_category">
+            <field name="name">category</field>
+            <field name="res_model">cinemateca.category</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model='ir.ui.view' id='film_form_view'>
+            <field name="name">category.form</field>
+            <field name="model">cinemateca.category</field>
+            <field name="arch" type="xml">
+                <form string="Film Form">
+                    <group>
+                        <field name="name"/>
+                        <field name="film_ids"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model='ir.ui.view' id='film_tree_view'>
+            <field name="name">category.tree</field>
+            <field name="model">cinemateca.category</field>
+            <field name="arch" type="xml">
+                <tree string="Film Tree">
+                    <field name="name"/>
+                    <field name="film_ids"/>
                 </tree>
             </field>
         </record>
@@ -31,7 +108,7 @@
 
         <!-- Top menu item -->
 
-        <menuitem name="Cinemateca" id="menu_root"/>
+        <menuitem name="cinemateca" id="menu_root"/>
 
         <!-- menu categories -->
 
@@ -40,6 +117,8 @@
         <!-- actions -->
 
         <menuitem name="director" id="menu_director" parent="menu" action="action_director"/>
+        <menuitem name="film" id="menu_film" parent="menu" action="action_film"/>
+        <menuitem name="category" id="menu_category" parent="menu" action="action_category"/>
     </data>
 
 </odoo>
